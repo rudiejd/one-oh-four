@@ -5,13 +5,16 @@ import java.io.File;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 
 public class Tester {
 	private int labNumber;
-	private static WebDriver driver;
+	static WebDriver driver;
 	private File folder;
 	
+	
+	//TODO: maybe change testing to a different method? not sure whether i should test on initialization
 	public Tester(int labNumber, File folder) {
 		this.labNumber = labNumber;
 		this.folder = folder;
@@ -24,7 +27,7 @@ public class Tester {
 	public int[] test() {
 		switch (this.labNumber) {
 			case 1:
-				return labOneTest();
+				return LabOne.labOneTest(this.folder);
 			case 2:
 				return labTwoTest();
 			case 3:
@@ -36,6 +39,7 @@ public class Tester {
 		}
 	}
 	
+	// deprecated Lab One testing method
 	private int[] labOneTest() {
 		
 		File[] labs = this.folder.listFiles();
@@ -88,7 +92,4 @@ public class Tester {
 	public static void endWeb() {
 		driver.quit();
 	}
-	
-	
-	
 }

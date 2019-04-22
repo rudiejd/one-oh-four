@@ -6,11 +6,11 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import org.openqa.selenium.chrome.ChromeDriver;
-
 
 public class Main {
 	
+	
+	//TODO: output scores to csv, sql functionality
 	public static void main(String[] args) throws IOException {
 		BufferedReader buff = new BufferedReader(new InputStreamReader(System.in));
 		System.out.println("Enter the path to your lab folder: ");
